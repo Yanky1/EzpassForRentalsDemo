@@ -1,0 +1,72 @@
+<h1>Enter customer information:</h1>
+  
+      <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">    
+          <table>    
+              <tr>    
+                  <td>    
+                    <mat-form-field >
+                          <input formControlName="name"  matInput placeholder="Name">    
+                    </mat-form-field>
+                  </td>    
+              </tr>    
+              
+              <tr>    
+                <td>    
+                    <mat-form-field >    
+                        <input  formControlName="plates"  matInput placeholder="plates">    
+                    </mat-form-field>    
+                </td>    
+            </tr>    
+              <tr>    
+                  <td>    
+                      <mat-form-field  >    
+                        <input formControlName="CreditCard" matInput placeholder="Credit card">    
+                      </mat-form-field>    
+                  </td>    
+              </tr>    
+              <tr>    
+                <td>    
+                    <mat-form-field  >    
+                        <input formControlName="exp" matInput placeholder="Exp.">    
+                    </mat-form-field>    
+                </td>    
+            </tr>    
+
+            <tr>    
+              <td>    
+                  <mat-form-field  >    
+                      <input formControlName="code" matInput placeholder="code">    
+                  </mat-form-field>    
+              </td>    
+          </tr>    
+              <tr>    
+                  <td>    
+                      <mat-form-field  >    
+                          <input formControlName="dateIn" matInput [matDatepicker]="dateRented" placeholder="Date rented">    
+                          <mat-datepicker-toggle matSuffix [for]="dateRented"></mat-datepicker-toggle>    
+                          <mat-datepicker #dateRented></mat-datepicker>    
+                      </mat-form-field>    
+                  </td>    
+              </tr>    
+              
+
+              <tr>    
+                <td>    
+                    <mat-form-field  >    
+                        <input formControlName="dateOut" matInput [matDatepicker]="dateBack" placeholder="Date back">    
+                        <mat-datepicker-toggle matSuffix [for]="dateBack"></mat-datepicker-toggle>    
+                        <mat-datepicker #dateBack></mat-datepicker>    
+                    </mat-form-field>    
+                </td>    
+            </tr>    
+
+              <tr  class="content-center">    
+                  <td>    
+                    <button *ngIf="!loadingService.isLoading" mat-raised-button [disabled]="!customerForm.valid" >SUBMIT</button>   
+                </td>    
+              </tr>    
+          </table>    
+      </form>  
+
+      <mat-spinner *ngIf="loadingService.isLoading"></mat-spinner>
+

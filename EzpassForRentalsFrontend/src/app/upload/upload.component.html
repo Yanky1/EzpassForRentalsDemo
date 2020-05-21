@@ -1,0 +1,29 @@
+<!-- <div>
+  <button type="button" class="nice-button">upload_file</button>
+<input accept=".pdf,.doc,.docx">
+</div> -->
+
+<h1> Here you can upload the ezpass statement, then charge all the customers <a id="inlineLink" routerLink="/chargeComponent">here</a></h1>
+
+<p id="note"> please note if you just want to see the app in demo mode, you don't need <br>
+   to upload any file, just go to the <a id="inlineLink" routerLink="/chargeComponent">next page</a> and select demo.csv.
+</p>
+
+<div>
+<label>
+  <input type="file" #file (change)="uploadFile(file.files)"  style="display:none" accept=".csv"/>
+
+  <a id="primeLink" mat-raised-button color="primary">
+    <mat-icon>file_upload</mat-icon>
+    Upload Document
+  </a>
+
+</label>
+
+</div>
+<mat-spinner *ngIf="loadingService.isLoading"></mat-spinner>
+
+
+  <div >
+  <p id="instructions">* To be able to upload the file, you have to go to the ezpass website and download the statement as a .CSV not as PDF, then come back here to upload the file.</p>
+</div>

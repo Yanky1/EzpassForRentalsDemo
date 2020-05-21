@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> {{title}} </title>
+</head>
+<body>
+
+  <mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+      
+      <div>
+      
+      <a mat-button [routerLink]="'/formComponent'"> Add new customer </a>
+      
+      <a mat-button [routerLink]="'/dataComponent'"> View/edit saved customers </a>
+      
+      <a mat-button [routerLink]="'/uploadComponent'"> Upload ez-pass statment </a>
+      
+      <a mat-button [routerLink]="'/chargeComponent'"> Get the customers to charge  </a>
+
+      <a mat-button [routerLink]="'/filesComponent'"> Uploaded files </a>
+
+      <a mat-button [routerLink]="'/aboutComponent'"> About this program </a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+    <router-outlet></router-outlet>
+</body>
+</html>

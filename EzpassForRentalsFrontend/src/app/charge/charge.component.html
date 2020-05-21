@@ -1,0 +1,59 @@
+<div *ngIf="fileNotInProcess; else fileProcessResults">
+<h1>Select ez-pass statement, <br> then click to charge all the customers accountable for this transactions</h1>
+
+<mat-selection-list #fileList>
+    <mat-list-option *ngFor="let result of fileResults" (click)="onSelection(result)">
+       {{result}}
+    </mat-list-option>
+  </mat-selection-list>
+
+  <mat-spinner *ngIf="loadingService.isLoading"></mat-spinner>
+
+  <p *ngIf="noCustomers" > No customers to charge from this file.</p>
+
+<div id="center">
+  <button *ngIf="!loadingService.isLoading" (click)="getChargeList()" mat-raised-button color="primary">Click to charge</button>
+</div>
+
+<p id="note"> NOTE: If you try this app for demo purposes, and want to see how it works, just select <br> 
+    the file demo.csv and it will give you the charge list of the demo customers in the databse </p>
+    
+
+</div>
+
+
+
+
+<ng-template #fileProcessResults>
+<button id="back-button" mat-button (click)="goBack()" >Charge another statement</button>
+<h1>All customers to charge for this ez-pass file "{{fileToCharge}}"</h1>
+
+<table >
+    <thead>
+        <tr>
+            <th>index</th>
+            <th>name</th>
+            <th>plates</th>
+            <th>cc</th>
+            <th>exp</th>
+            <th>code</th>
+            <th>dateIn</th>
+            <th>dateOut</th>
+            <th>amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let result of customerResults; let i = index">
+            <th >{{i + 1}}</th>
+            <td >{{result.name}}</td>
+            <td >{{result.plates}}</td>
+            <td >{{result.creditCard}}</td>
+            <td >{{result.exp}}</td>
+            <td >{{result.code}}</td>
+            <td >{{result.dateIn}}</td>
+            <td >{{result.dateOut}}</td>
+            <td >{{result.amount}}</td>
+        </tr>
+    </tbody>
+</table>
+</ng-template>

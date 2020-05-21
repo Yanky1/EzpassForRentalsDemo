@@ -1,0 +1,15 @@
+mat-list{
+    width: 40%;
+    margin: 40px auto;
+    background-color: mintcream;
+}
+.material-icons{
+    margin: 10px;
+    cursor: pointer;
+    background-color: white;
+}
+
+
+mat-spinner {
+    margin: auto;
+}

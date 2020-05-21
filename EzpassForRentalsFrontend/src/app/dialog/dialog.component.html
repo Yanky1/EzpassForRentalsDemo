@@ -1,0 +1,47 @@
+<h1 mat-dialog-title><strong>{{action}}</strong></h1>
+<div mat-dialog-content>
+  <mat-form-field *ngIf="action == 'Update';">
+    <input placeholder="{{action}} Name" matInput [(ngModel)]="local_data.name">
+  </mat-form-field>
+
+  <mat-form-field *ngIf="action == 'Update';">
+    <input placeholder="{{action}} tag" matInput [(ngModel)]="local_data.plates">
+  </mat-form-field>
+
+  <mat-form-field *ngIf="action == 'Update';">
+    <input placeholder="{{action}} date rented" matInput [(ngModel)]="local_data.dateIn">
+  </mat-form-field>
+
+  <mat-form-field *ngIf="action == 'Update';">
+    <input placeholder="{{action}} Date back" matInput [(ngModel)]="local_data.dateOut">
+  </mat-form-field>
+
+  <mat-form-field *ngIf="action == 'Update';">
+    <input placeholder="{{action}} Credit card" matInput [(ngModel)]="local_data.creditCard">
+  </mat-form-field>
+
+  <mat-form-field *ngIf="action == 'Update';">
+    <input placeholder="{{action}} Exp. date" matInput [(ngModel)]="local_data.exp">
+  </mat-form-field>
+
+  <mat-form-field *ngIf="action == 'Update';">
+    <input placeholder="{{action}} Sec. code" matInput [(ngModel)]="local_data.code">
+  </mat-form-field>
+
+ <p *ngIf="action == 'Delete';"> Sure to delete <b>{{local_data.name}}</b> with all his information? </p>
+
+  <div *ngIf="action == 'Credit card'">
+    <p> 
+      <b>Credit card: </b>{{local_data.creditCard}} <br>
+      <b>Exp. date: </b>{{local_data.exp}} <br>
+      <b> Sec. code: </b> {{local_data.code}}
+    </p>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  
+  <button mat-raised-button (click)="closeDialog()"  >Cancel</button>
+  <button *ngIf="action != 'Credit card'" mat-raised-button style="background-color: rgb(255, 102, 26); margin-left: 15px;" (click)="doAction()">{{action}}</button>
+</div>
+ 

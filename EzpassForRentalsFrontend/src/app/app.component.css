@@ -1,0 +1,4 @@
+.mat-button :hover {
+    background-color: green !important;
+    opacity: .5;
+}

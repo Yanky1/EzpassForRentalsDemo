@@ -1,0 +1,29 @@
+
+
+h1 {
+    text-align: center;
+}
+
+
+table{
+    width: 20vw;
+    margin: 25px auto;
+}
+
+mat-form-field{
+    width: 100%;
+}
+
+.content-center {
+    width: 100%;
+    text-align: center;
+}
+
+button{
+    width: 70%;
+    background-color: rgb(96, 255, 150);
+}
+
+mat-spinner {
+    margin: auto;
+}

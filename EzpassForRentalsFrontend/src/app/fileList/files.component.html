@@ -1,0 +1,8 @@
+<mat-spinner *ngIf="loadingService.isLoading"></mat-spinner>
+
+
+<mat-list #fileToCharge>
+    <mat-list-item *ngFor="let file of fileResults" >
+        <i (click)="downloadFile(file)" class="material-icons">file_download </i> {{file}}
+    </mat-list-item>
+  </mat-list>

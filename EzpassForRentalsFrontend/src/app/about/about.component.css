@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+}
+
+div{
+    width: fit-content;
+    margin: auto;
+}
+
+p {
+    font-size: 25px;
+    text-align: left;
+}
+
+.small-text{
+    font-size: 18px;
+}

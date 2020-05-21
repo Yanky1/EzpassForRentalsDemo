@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+    font-size: 7vh;
+}
+
+mat-table {
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+    width: 75%;
+    margin-left:auto; 
+    margin-right:auto;
+    border-collapse: collapse;
+}
+
+th, td {
+padding-left: 3%;
+padding-right: 3%;
+border: 1px solid #ddd;
+}
+
+i:hover {
+    background-color: rgb(235, 235, 224);
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  mat-spinner {
+    margin: auto;
+}
+
